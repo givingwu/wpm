@@ -4,10 +4,10 @@ A new Node Package Manager - design it based on Java Maven Design Principles.
 **Remeber, it is draft stage till now.**
 
 # Features
-1. Globally Manage -> Package and Package Version, integerates all in one folder to *Globally `node_modules` folder*
-2. Make your local project file size smaller and smaller.
-3. Other Features Like [Maven](https://github.com/apache/maven).
-4. Compatible with `yarn` and `npm`.
++ Manage all Packages globally, integrates all modules in one folder to *Globally `node_modules` folder*
++ Make your local project smaller and smaller.
++ Compatible with `yarn` and `npm`
++ Other Features Like [Maven](https://github.com/apache/maven).
 
 # Details
 1. **Do not have the local folder `node_modules` in local project path anymore.** - intead of, it be installed globally and be import from the globally `/root/.wpm/node_modules`, but i have not ready to thinkof where to put the all dependencies in globally file system.
