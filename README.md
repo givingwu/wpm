@@ -4,10 +4,9 @@ A new Node Package Manager - design it based on Java Maven Design Principles.
 **Remeber, it is draft stage till now.**
 
 # Features
-+ Manage all Packages globally, integrates all modules in one folder to *Globally `node_modules` folder*
++ Manage all Packages globally, integrating all modules in one folder to *Globally `node_modules` folder*.
 + Make your local project smaller and smaller.
-+ Compatible with `yarn` and `npm`
-+ Other Features Like [Maven](https://github.com/apache/maven).
++ Compatible with `yarn` and `npm`.
 
 # Details
 1. **Do not have the local folder `node_modules` in local project path anymore.** - intead of, it be installed globally and be import from the globally `/root/.wpm/node_modules`, but i have not ready to thinkof where to put the all dependencies in globally file system.
@@ -15,12 +14,12 @@ A new Node Package Manager - design it based on Java Maven Design Principles.
 
 # TODOs
 - [x] Start design `WPM`.
+- [ ] Can i only use a webpack plugin to impls it? thinking...
 - [ ] Implements `WPM` CLI.
     - [ ] command `wpm config [options]`, config options includes *registry*, *prefix*, *config*, *init*
-    - [ ] command `wpm init`
+    - [ ] command `wpm init` - Just impls it like `npm init`. 
     - [ ] command `wpm install`
     - [ ] command `wpm remove`, alias `rm`, `delete`, `del`
-- [ ] Com
 - [ ] Implements `NodeJS` extensions to make it supports `import`、`require` collect dependencies from globally folder first.
 - [ ] Publish & OpenSource
 
