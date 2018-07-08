@@ -23,5 +23,8 @@ A new Node Package Manager - design it based on Java Maven Design Principles.
 - [ ] Implements `NodeJS` extensions to make it supports `import`、`require` collect dependencies from globally folder first.
 - [ ] Publish & OpenSource
 
+# References
++ [nodejs/api/modules_loading_from_the_global_folders]https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders
+
 # LICENSE
 Before i done the all of `TODOs`, It was under [Apache License, Version 2.0, January 2004](https://www.apache.org/licenses/LICENSE-2.0)* license, After that it will releases under [MIT](https://opensource.org/licenses/MIT) license.
