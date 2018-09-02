@@ -2,6 +2,13 @@
 ## Node module
 [官方设计思路的文档](http://nodejs.cn/api/modules.html#modules_all_together)
 
+
+## mapm的目标
+
+1. sizeof(O(N)) -> O(1)
+2. debug friendly
+
+
 ## npm VS maven
 首先比较 maven 设计与npm的不同之处，再做node版的 maven 实现。
 
@@ -25,16 +32,18 @@
 	事实上 npm 也支持这一点，这本身并非 nodeJS 的工作，既是 npm config get registry 的地址。但是它是否支持像 maven
 	一样的 local registry -> if not found this package -> global registry 的回退机制呢？在还未查看 npm source code 之前还无法定论。下载包的时候先从本地 registry 下载，类似以下伪代码
 
-	`mapm install package`
+	`mapm install ${package}`
 
        ```
 	if (${localRegistryServer}/${module} is a Directory) DOWN_FROM_LOCALE(package)
 	else DOWN_FROM_REMOTE(package)
 	```
 
-3. maven 之其他特点？还需要摸索。如何摸索？当然是玩几把 Java Project。 
+3. maven 之其他特点？还需要摸索。如何摸索？当然是玩几把 Java Project。
+
 
 ## Modifies
+
 Next, I will change some lines in following fake code: The major modifies in `LOAD_AS_DIRCTORY` method in fact. There is a important thing is the `require` function does not support `require('package', 'version')` like this, we got 'version' the only entry is from the dev/dependecies of project pacakge.json. How to impls require('package', 'version')? Overwrite the original native require function or have other ways?
 
 ```
@@ -48,9 +57,9 @@ require(X, SEMVER) from module at path Y
    a. LOAD_AS_FILE(Y + X)
    b. LOAD_AS_DIRECTORY(Y + X)
 /* add: 1.1
-   a. if has valid semver 
+   a. if has valid semver
    b. SEMVER &&  LOAD_AS_VERSION(X + SERVER);
- */ 
+ */
 4. LOAD_NODE_MODULES(X, dirname(Y))
 5. THROW "not found"
 
@@ -99,7 +108,9 @@ NODE_MODULES_PATHS(START)
 5. return DIRS
 ```
 
+
 ## What would like i do?
+
 1. 实现以上功能，则需要 mapm - maven node package manager.
 2. 重写 require 方法
 3. 重写 npm/yarn install 方法
