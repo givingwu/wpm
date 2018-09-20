@@ -50,13 +50,13 @@ package.json:
 # Steps
 1. Write `wpm install {package}`, well, u know this project's name `mapm`, but i am planning to use `wpm` for CLI bin.
 
-  - [x] implements `wpm config {globalPath}`, and it must has default global path, like `$HOME/wpm_global/*`
-  - [x] implements `wpm install {package}`
-    - [x] Check Does it exist on local disk or Have installed this version ever before? `checkPackageExistsByVersion`, it easy to implements it by `fs.existSync(path = ${globalPath/package.version/package.name/package.main})`.
+  - [ ] implements `wpm config {globalPath}`, and it must has default global path, like `$HOME/wpm_global/*`
+  - [ ] implements `wpm install {package}`
+    - [ ] Check Does it exist on local disk or Have installed this version ever before? `checkPackageExistsByVersion`, it easy to implements it by `fs.existSync(path = ${globalPath/package.version/package.name/package.main})`.
       - exists - `console.log(${package.name-package.version} exists in ${globalPath})`
       - does not exist - go 2 next
-    - [x] Through `registry` match rules, get the best choice of registry
-    - [x] Install `package.dependencies` recursively.
+    - [ ] Through `registry` match rules, get the best choice of registry
+    - [ ] Install `package.dependencies` recursively.
 
 2. Rewrite nodejs `require`, implements it could reference this lib [require-rewrite](https://github.com/IUnknown68/require-rewrite/blob/master/index.js)
 
