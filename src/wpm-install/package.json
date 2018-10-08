@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "read-package-json": "^2.0.13",
+    "read-package-tree": "^5.2.1"
+  }
+}

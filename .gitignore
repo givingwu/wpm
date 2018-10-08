@@ -12,6 +12,7 @@ npm-debug.log*
 
 # big file/folder
 node
+cnpm
 require-rewrite
 
 # Runtime data
